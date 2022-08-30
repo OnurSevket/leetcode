@@ -1,13 +1,18 @@
 package com.onursevket.leetcode.problems;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Array {
 
     public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; nums.length > i; i++) {
-            for (int j = i + 1; nums.length > j; j++) {
-                if (nums[i] + nums[j] == target)
-                    return new int[]{i, j};
+            int comp = target - nums[i];
+            if (map.containsKey(comp)) {
+                return new int[]{map.get(comp), i};
             }
+            map.put(nums[i], i);
         }
         return null;
     }

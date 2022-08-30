@@ -3,6 +3,7 @@ package com.onursevket.leetcode.problems;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class ArrayTest {
 
@@ -28,5 +29,16 @@ class ArrayTest {
         int[] sumOfNumber = array.twoSum(numbers, targetNum);
         //Assert
         assertArrayEquals(sumOfNumber, new int[]{2, 5});
+    }
+
+    @Test
+    public void array_element_two_sum_do_not_have() {
+        //Arrange
+        int[] numbers = new int[]{6, 9, 10, 21, 76, 111, 45};
+        int targetNum = 122;
+        //Act
+        int[] sumOfNumber = array.twoSum(numbers, targetNum);
+        //Assert
+        assertNull(sumOfNumber);
     }
 }
